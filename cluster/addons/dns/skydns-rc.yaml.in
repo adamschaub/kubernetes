@@ -19,7 +19,7 @@ spec:
         version: v11
         kubernetes.io/cluster-service: "true"
     spec:
-{% if grains['cloud'] is defined and grains['cloud'] in [ 'vsphere', 'photon-controller' ] %}
+{% if grains is defined and grains['cloud'] is defined and grains['cloud'] in [ 'vsphere', 'photon-controller' ] %}
       hostNetwork: true
 {% endif %}
       containers:
